@@ -40,6 +40,15 @@ class Rectangulo {
                 '}';
     }
 }
+
+class ComparaRectangulos implements Comparator<Rectangulo> {
+
+    @Override
+    public int compare(Rectangulo r1, Rectangulo r2) {
+        return (int) (r1.calcularArea() - r2.calcularArea());
+    }
+}
+
 public class OrdenaRectangulos {
     public static void main(String[] args) {
         Rectangulo r1 = new Rectangulo(124, 300);
@@ -58,8 +67,16 @@ public class OrdenaRectangulos {
             System.out.println(rectangulo);
         }
 
-        Collections.sort(listaRectangulos);
+        Collections.sort(listaRectangulos, new Comparator<Rectangulo>() {
+            @Override
+            public int compare(Rectangulo r1, Rectangulo r2) {
+                return (int) (r1.calcularArea()-r2.calcularArea());
+            }
+        });
 
+        for (Rectangulo rectangulo: listaRectangulos) {
+            System.out.println(rectangulo);
+        }
 
     }
 }
