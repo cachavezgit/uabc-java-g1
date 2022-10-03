@@ -39,5 +39,7 @@ public class Localizacion {
         NumberFormat nf_defaultSP = NumberFormat.getInstance(Locale.ITALY);
         System.out.println(nf_defaultSP.format(123.35));
 
+
+
     }
 }
