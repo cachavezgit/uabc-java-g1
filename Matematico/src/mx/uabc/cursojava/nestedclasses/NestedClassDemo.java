@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class NestedClassDemo
-{
+public class NestedClassDemo {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Demo application");
@@ -16,48 +15,41 @@ public class NestedClassDemo
     }
 
     private static void placeComponents(JFrame frame) {
-            frame.setLayout(null);
+        frame.setLayout(null);
 
-            JLabel userLabel = new JLabel("User");
-            userLabel.setBounds(10, 10, 80, 25);
-            frame.add(userLabel);
+        JLabel userLabel = new JLabel("User");
+        userLabel.setBounds(10, 10, 80, 25);
+        frame.add(userLabel);
 
-            JTextField userText = new JTextField(20);
-            userText.setBounds(100, 10, 160, 25);
-            frame.add(userText);
+        JTextField userText = new JTextField(20);
+        userText.setBounds(100, 10, 160, 25);
+        frame.add(userText);
 
-            JLabel passwordLabel = new JLabel("Password");
-            passwordLabel.setBounds(10, 40, 80, 25);
-            frame.add(passwordLabel);
+        JLabel passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(10, 40, 80, 25);
+        frame.add(passwordLabel);
 
-            JPasswordField passwordText = new JPasswordField(20);
-            passwordText.setBounds(100, 40, 160, 25);
-            frame.add(passwordText);
+        JPasswordField passwordText = new JPasswordField(20);
+        passwordText.setBounds(100, 40, 160, 25);
+        frame.add(passwordText);
 
-            JButton loginButton = new JButton("login");
-            loginButton.setBounds(10, 80, 80, 25);
-            frame.add(loginButton);
+        JButton loginButton = new JButton("login");
+        loginButton.setBounds(10, 80, 80, 25);
+        frame.add(loginButton);
 
-            JButton registerButton = new JButton("register");
-            registerButton.setBounds(180, 80, 80, 25);
-            frame.add(registerButton);
+        JButton registerButton = new JButton("register");
+        registerButton.setBounds(180, 80, 80, 25);
+        frame.add(registerButton);
 
-            ActionListener loginButtonListener = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                        JButton source = (JButton) e.getSource();
-                        JOptionPane.showMessageDialog(source, source.getText()
-                        + " button has been pressed");
-                        }
-            };
-            loginButton.addActionListener(loginButtonListener);
+        loginButton.addActionListener(e -> {
+            JButton source = (JButton) e.getSource();
+            JOptionPane.showMessageDialog(source, source.getText()
+                    + " button has been pressed");
+        });
 
-            registerButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                        JOptionPane.showMessageDialog((Component) e.getSource(),
-                        "button has been pressed");
-                        }
-                        });
-            }
+        registerButton.addActionListener(e -> {
+            JOptionPane.showMessageDialog((Component) e.getSource(),
+                    "button has been pressed");
+        });
+    };
 }
