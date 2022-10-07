@@ -1,11 +1,14 @@
 package mx.uabc.cursojava.fundamentales;
 
+import mx.uabc.cursojava.annotations.DemoAnotacion;
+
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+@DemoAnotacion(autor = "Carlos Ivan Chavez Fuentes", descripcion = "Ejemplo de localizacion")
 public class Localizacion {
     public static void main(String args[]){
         Locale locale = Locale.getDefault();
